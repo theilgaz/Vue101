@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app" class="container mt-5">
+        <button class="btn btn-primary" @click="sayMyName(item)">Hit me</button>
+        <button class="btn btn-warning" @click="salute">Salute</button>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                item: 'John Wick'
+            },
+            methods: {
+                sayMyName(item) {
+                    alert(item)
+                },
+                salute(){
+                    this.sayMyName('Yo!')
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
