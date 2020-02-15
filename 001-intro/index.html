@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+
+    <div id="app">
+
+
+        <h6>
+           
+        </h6>
+
+        <div v-html="myhtml"></div>
+        <a :href="link"> {{poet}}</a>
+      
+          <h3> ÜÇ DİL</h3>
+ . . .
+ 
+  <p>
+En azından üç dil bileceksin<br/>
+En azından üç dilde<br/>
+Ana avrat dümdüz gideceksin<br/>
+En azından üç dil<br/>
+Çünkü sen ne tarih ne coğrafya<br/>
+Ne şu ne busun<br/>
+Oğlum Mernuş<br/>
+Sen otobüsü kaçırmış bir milletin çocuğusun...
+  </p>
+  <p>
+
+Bedri Rahmi Eyüboğlu
+( 1911 - 1975 )
+     </p>   
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                poet: 'Bedri Rahmi Eyüboğlu',
+                link: "www.example.com",
+                myhtml:'<b><h5>Bedri Rahmi Eyüboğlu Şiirleri</h5></b>'
+            }
+        });
+    </script>
+</body>
+
+</html>
