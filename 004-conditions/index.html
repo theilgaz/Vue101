@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app" class="container mt-5">
+        <template v-if="firstOne">
+            <div class="alert alert-success" role="alert">
+                Güç kalkanları devrede
+            </div>
+        </template>
+        <template v-if="secondOne"><div class="alert alert-danger" role="alert">
+                Devredışı
+              </div>
+        </template>
+        <button class="btn btn-success" @click="switchItems">Switch</button>
+
+        <template v-if="age >= 20">
+            Old school boy
+        </template>
+        <p v-if="show"> Show active</p>
+        <p v-if="!show"> Show not active</p>
+        <input type="text" readonly disabled v-model="counter"></input>
+        <button class="btn btn-success" @click="iCount(1)">+</button>
+        <button class="btn btn-success" @click="iCount(10)">10x +</button>
+        <button class="btn btn-danger" @click="dCount(1)">-</button>
+        <button class="btn btn-danger" @click="dCount(10)">10x -</button>  
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                firstOne: true,
+                secondOne: false,
+                show:true,
+                age:12,
+                counter:0
+            },
+            methods: {
+                switchItems() {
+                    this.firstOne = !this.firstOne;
+                    this.secondOne = !this.secondOne;
+                },
+                iCount(i=1){
+					for(x=0;x<i;x++)
+					{
+						this.counter++;
+					} 
+                    this.updateAge(this.counter);
+                },
+                dCount(i=1){
+					for(x=0;x<i;x++)
+					{
+						this.counter--;
+					}
+                    this.updateAge(this.counter);
+                },
+                updateAge(newValue)
+                {
+                    this.age = newValue;
+                }
+            }
+        });
+    </script>
+
+</body>
+
+</html>
